@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:screenOrientation="portrait">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back" />
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:background="#232323"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SearchTunes"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_marginStart="10dip"
+        android:layout_marginTop="10dip"
+        android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_below="@id/top_bar"
+        android:background="#232323"
+        android:orientation="horizontal"
+        android:paddingStart="8dip"
+        android:paddingTop="4dip"
+        android:paddingEnd="8dip">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/artist_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carrier_search_txt_chose_carrier"
+            android:animateLayoutChanges="true"
+            android:background="?attr/colorOnPrimarySurface"
+            android:paddingTop="4dip"
+            android:paddingBottom="4dip"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@color/cardview_light_background"
+            app:queryHint="Enter Artist's Name" />
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_results"
+        android:layout_below="@id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
